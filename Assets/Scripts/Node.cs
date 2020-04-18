@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
-     public Collider col;
+    [HideInInspector] public Collider col;
     public Transform cameraPosition;
     public List<Node> relevantNodes = new List<Node>();
 
@@ -22,14 +22,15 @@ public class Node : MonoBehaviour
     }
 
     void OnMouseDown()
-    {
-        //Leave the last Node and arrive at the next one
-        if(GameManager.ins.currentNode != null) GameManager.ins.currentNode.Leave();
+    {    
         Arrive();
     }
 
-    void Arrive()
+    public void Arrive()
     {
+        //Leave the last Node and arrive at the next one
+        if (GameManager.ins.currentNode != null) GameManager.ins.currentNode.Leave();
+
         GameManager.ins.currentNode = this;
 
         Camera.main.transform.position = cameraPosition.position;

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Item : Node
 {
-
+    public Node loc;
 }

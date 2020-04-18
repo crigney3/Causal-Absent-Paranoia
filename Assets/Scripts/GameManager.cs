@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager ins;
-    public Node currentNode;
+    [HideInInspector] public Node currentNode;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetMouseButtonDown(1) && currentNode.GetComponent<Item>() != null)
+        {
+            currentNode.GetComponent<Item>().loc.Arrive();
+        }
     }
 }

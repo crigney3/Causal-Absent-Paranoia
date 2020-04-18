@@ -419,6 +419,7 @@ MonoBehaviour:
   cameraPosition: {fileID: 603258869}
   relevantNodes:
   - {fileID: 2080348188}
+  loc: {fileID: 1655275295}
 --- !u!65 &423596798
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1341,6 +1342,7 @@ MonoBehaviour:
   col: {fileID: 0}
   cameraPosition: {fileID: 1508964647}
   relevantNodes: []
+  loc: {fileID: 1655275295}
 --- !u!65 &2080348189
 BoxCollider:
   m_ObjectHideFlags: 0
