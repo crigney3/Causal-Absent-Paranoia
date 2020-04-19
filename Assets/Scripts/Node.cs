@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Node : MonoBehaviour
 {
@@ -9,10 +10,10 @@ public class Node : MonoBehaviour
     public List<Node> relevantNodes = new List<Node>();
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {       
         col = this.gameObject.GetComponent<Collider>();
-        Debug.Log("Awoke Collider" + col);
+        col.enabled = false;
     }
 
     // Update is called once per frame
@@ -26,37 +27,35 @@ public class Node : MonoBehaviour
         Arrive();
     }
 
-    public void Arrive()
+    public virtual void Arrive()
     {
         //Leave the last Node and arrive at the next one
         if (GameManager.ins.currentNode != null) GameManager.ins.currentNode.Leave();
 
         GameManager.ins.currentNode = this;
 
-        Camera.main.transform.position = cameraPosition.position;
-        Camera.main.transform.rotation = cameraPosition.rotation;
+        GameManager.ins.cameraRig.alignTo(cameraPosition);
 
         if(col != null)
         {
             col.enabled = false;
         }
 
-        foreach(Node n in relevantNodes)
-        {
-            if(n.col != null)
-            {
-                n.col.enabled = true;
-            }
-        }
+        SetReachableNodes(true);
     }
 
-    public void Leave()
+    public virtual void Leave()
+    {
+        SetReachableNodes(false);
+    }
+
+    public void SetReachableNodes(bool value)
     {
         foreach (Node n in relevantNodes)
         {
             if (n.col != null)
             {
-                n.col.enabled = false;
+                n.col.enabled = value;
             }
         }
     }

@@ -4,5 +4,37 @@ using UnityEngine;
 
 public class Item : Node
 {
-    public Node loc;
+    public Location loc;
+    Interactable inter;
+
+    void Start()
+    {
+        inter = GetComponent<Interactable>();
+    }
+    public override void Arrive()
+    {
+        if(inter != null && inter.enabled)
+        {
+            inter.Interact();
+            return;
+        }
+
+        base.Arrive();
+
+        if(inter != null)
+        {
+            col.enabled = true;
+            inter.enabled = true;
+        }
+    }
+
+    public override void Leave()
+    {
+        base.Leave();
+
+        if(inter != null)
+        {
+            inter.enabled = false;
+        }
+    }
 }
