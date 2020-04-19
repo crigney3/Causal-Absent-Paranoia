@@ -36,6 +36,11 @@ public class GameManager : MonoBehaviour
                 ivCan.Close();
                 return;
             }
+            else if (obsCamera.gameObject.activeInHierarchy)
+            {
+                obsCamera.Close();
+                return;
+            }
             currentNode.GetComponent<Item>().loc.Arrive();
         }
     }
