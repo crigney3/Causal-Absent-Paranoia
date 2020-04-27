@@ -6,18 +6,20 @@ public class Switcher : Interactable
 {
     public bool state;
     private StateReactor sReactor;
+    public delegate void OnStateChange();
+    public event OnStateChange change;
 
     void Awake()
     {
-        sReactor = GetComponent<StateReactor>();
+
     }
 
     public override void Interact()
     {
         state = !state;
-        if(sReactor != null)
+        if(change != null)
         {
-            sReactor.React();
+            change();
         }
     }
 }

@@ -859,6 +859,7 @@ MonoBehaviour:
   relevantNodes:
   - {fileID: 1203381411}
   - {fileID: 870369787}
+  - {fileID: 423596797}
 --- !u!1 &780106089
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,6 +872,7 @@ GameObject:
   - component: {fileID: 780106093}
   - component: {fileID: 780106092}
   - component: {fileID: 780106091}
+  - component: {fileID: 780106094}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -951,6 +953,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780106089}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &780106094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780106089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efeb291e06e2a754eb31e4da2b4f7b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  switcher: {fileID: 1203381410}
+  active: {r: 0.6792453, g: 0, b: 0, a: 0}
+  inactive: {r: 0, g: 0.6698113, b: 0.024238257, a: 0}
 --- !u!1 &811691227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,7 +1423,6 @@ GameObject:
   - component: {fileID: 1203381411}
   - component: {fileID: 1203381410}
   - component: {fileID: 1203381412}
-  - component: {fileID: 1203381413}
   m_Layer: 0
   m_Name: GreenCube
   m_TagString: Untagged
@@ -1473,20 +1489,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.52, y: 0.43, z: 0.45}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1203381413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1203381408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efeb291e06e2a754eb31e4da2b4f7b45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: {r: 0.7529412, g: 0, b: 0.02006118, a: 0}
-  inactive: {r: 0.023250062, g: 0.7176471, b: 0, a: 0}
 --- !u!1 &1332466164
 GameObject:
   m_ObjectHideFlags: 0
@@ -2570,6 +2572,7 @@ GameObject:
   - component: {fileID: 2080348188}
   - component: {fileID: 2080348189}
   - component: {fileID: 2080348190}
+  - component: {fileID: 2080348191}
   m_Layer: 0
   m_Name: BlueCube
   m_TagString: Untagged
@@ -2634,6 +2637,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a66073397cfc46428d798fd9630757b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2080348191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080348186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7248259593878e4fa02eb0ed7dc1094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  watchSwitcher: {fileID: 1203381410}
 --- !u!1 &2139089255
 GameObject:
   m_ObjectHideFlags: 0

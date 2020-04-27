@@ -23,6 +23,10 @@ public class Item : Node
 
         if(inter != null)
         {
+            if(GetComponent<Prereq>() != null && !GetComponent<Prereq>().Complete)
+            {
+                return;
+            }
             col.enabled = true;
             inter.enabled = true;
         }

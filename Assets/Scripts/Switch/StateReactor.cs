@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Switcher))]
 public abstract class StateReactor : MonoBehaviour
 {
-    protected Switcher switcher;
+    public Switcher switcher;
 
     protected virtual void Awake()
     {
-        switcher = GetComponent<Switcher>();
+        switcher.change += React;
+        React();
     }
 
     public virtual void React()

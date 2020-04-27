@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(MeshRenderer))]
 public class ColorReactor : StateReactor
 {
     public Color active;
@@ -10,8 +11,8 @@ public class ColorReactor : StateReactor
 
     protected override void Awake()
     {
+        mesh = GetComponent<MeshRenderer>();
         base.Awake();
-        mesh = GetComponentInChildren<MeshRenderer>();
     }
 
     public override void React()
